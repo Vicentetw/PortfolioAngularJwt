@@ -1,0 +1,14 @@
+
+<p *ngIf="this.persona">
+Datos de Autor para Argentina Programa grupo 141:<br>
+Nombre: {{this.persona.nombre}}<br>
+Apellido: {{this.persona.apellido}}<br>
+Documento: {{this.persona.dni}}<br>
+<a href="mailto:{{this.email}}">Contactar por email</a>
+
+
+</p>
+<p *ngIf="!this.persona">
+    <span style="border: 4px solid red; color:red; font-size: large">...Esperando datos del servidor</span>
+
+</p>

@@ -1,0 +1,37 @@
+<!-- ====== css experiencia ======= -->
+<section id="services" class="services-mf pt-5 route">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="title-box text-center">
+          <h1 class="titulos">
+
+            {{exp}}
+
+          </h1>
+          <app-edit-experiencia-button></app-edit-experiencia-button>
+          <div class="line-mf"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let exp of experiencia">
+        <div class="service-box">
+          <div class="service-ico">
+            <span class="ico-circle"><i class="bi bi-bag-check"></i></span>
+          </div>
+          <div class="service-content">
+            <h2 class="titulos">{{this.exp.nombre_experiencia}}</h2>
+            <h3 class="text-muted">{{this.exp.duracion_experiencia}}</h3>
+            <p class="s-description text-center">
+              {{this.exp.descripcion_experiencia}}
+            </p>
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- fin css experiencia -->

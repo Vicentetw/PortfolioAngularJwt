@@ -1,0 +1,45 @@
+<section id="services" class="services-mf pt-5 route">
+
+<div class="container" >
+<div  class="service-box">
+<div class="row">
+  <div class="col-sm-12">
+    <div class="title-box text-center">
+      <h1>
+
+       Skills
+      
+      </h1>
+     <app-edit-skill-button></app-edit-skill-button>
+      <div class="line-mf"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <div class="row mt-3">
+        <div class=" col-md-4  " *ngFor="let s of skill">
+          <div class="service-box"> 
+            <h2 class="texto">{{this.s.nombre_skill}}</h2>
+          <div class="container">
+              
+              <circle-progress 
+  [percent]=this.s.porcentaje_skill
+  [radius]="100"
+  [outerStrokeWidth]="16"
+  [innerStrokeWidth]="8"
+  [outerStrokeColor]="'#6C63FF'"
+  [innerStrokeColor]="'#8ba9bc'"
+  [animation]="true"
+  [animationDuration]="300"
+></circle-progress>
+          </div>
+      </div>
+      
+      </div>
+      
+  </div>
+  
+</div>
+
+</section>

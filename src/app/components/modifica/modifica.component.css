@@ -1,0 +1,482 @@
+.oculto{
+    visibility: hidden;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.fondo {
+    background-color: #a5c8f7;
+   
+} 
+
+
+.contenido {
+    font-size: 20px;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    
+    
+}
+
+#educacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#educacion h4 {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #6C63FF;
+    border-bottom: 1px #6C63FF solid;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    justify-self: center;
+    
+}
+
+#educacion h4 button {
+    text-align: right;
+}
+
+
+.educacion {
+    justify-items:right;
+    padding: 5px;
+    width: 90%;
+    
+    
+    
+
+}
+
+
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    justify-content: center;
+    row-gap: 1px;
+
+}
+
+.columnas {
+    padding: 20px;
+    width: 100%;
+}
+
+.datoseducacion {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: #d9dfe6;  
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.datoseducacion:hover {
+    box-shadow: 2px 14px 15px #6C63FF;
+    transition: 0.2s;
+}
+
+.datoseducacion p {
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    padding: 7px;
+    line-height: 18px;
+    font-size: 15px;
+    justify-items:flex-end;
+    align-items: center;
+    padding-bottom: 0px;
+    
+    
+}
+
+.logoeducacion {
+    width: 25%;
+    border-radius: 50%;
+}
+
+.titulo {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+
+#eliminar-editar-educacion {
+    display: flex;
+    font-size: 10px;
+    height: 100%;
+    align-self: flex-end;
+    justify-self: flex-start;
+    
+}
+
+i {
+    color: #6C63FF;
+    font-size: 10px;
+}
+
+
+
+
+/* botones de edición */
+
+.botones_contenido {
+    
+    border:#0a66c2;
+    background:#d9dfe6;
+    padding: 5px;
+    
+}
+.botones_editar_borrar{
+    font-size: larger;
+    border:#0a66c2;
+    background:#d9dfe6;
+    padding: 5px;
+    text-align: end;
+}
+.botones_contenido i {
+    text-align: end;
+}
+
+
+.boton_edicion_texto {
+    padding: 2px 10px;
+    margin-top: 10px;
+    background: #938aec;
+    color:#a5c8f7;
+    border-radius: 5px;
+    font-size: 10px;
+    border: none;
+    
+    
+}
+
+.close {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background:#a5c8f7;
+    color: #938aec;
+}
+
+.boton_eliminar {
+    padding: 2px 10px;
+    margin-top: 10px;
+    background: #938aec;
+    color:#a5c8f7;
+    border-radius: 5px;
+    font-size: 10px;
+    border: none;
+}
+
+/* contenido educacion */
+
+
+
+
+
+
+
+.modal-dialog {
+    width: 50%;
+    padding: 15px;
+    justify-content: center;
+    align-self: center;
+    top: 10%;
+    left: 25%;
+}
+
+    
+.modal-body {
+    padding: 10px;
+}
+
+.modal-header button {
+    border: none;
+    color: #fffefe;
+    }
+
+.modal-header h5 {
+    color: #060525;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.modal-content {
+    padding: 20px;
+    background-color: rgb(248, 245, 247);
+}
+
+.form {
+    line-height: 20px;
+}
+
+.modal-body form label {
+    line-height: 7px;
+    margin-top: 5px;
+    color: #060525;
+}
+
+.modal-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 10px 0px 10px;
+    
+}
+
+.modal-footer button {
+    border: none;
+    color: #ededf5;
+    margin: 5px;
+    padding: 2px 5px;
+    border-color: none;
+
+}
+
+.modal-footer .boton-editar {
+    border: none;
+    color: #060525;
+    margin: 5px;
+    padding: 2px 5px;
+    border-color: none;
+}
+
+.modal-body form input {
+    width: 100%;
+}
+
+#update-educacion-modal {
+    padding: 3px 5px;
+    color: #060525;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+.formulario{
+margin-top: 30px;
+margin-left: 30px;
+}
+.mat-card {
+    border-radius: 32px;
+    margin: 10px 10px;
+    padding: 20px;
+}
+.mat-card#first-card {
+    padding: 0;
+}
+.profile-image {
+    border-radius: 50%;
+    width: 152px;
+    height: 152px;
+    margin-top: -110px;
+    z-index: 1;
+}
+div#info-actions {
+    display: flex;
+}
+div#info-actions button {
+    margin-right: 8px;
+}
+div#info-contact span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+div#info-contact span a {
+    color: #0a66c2;
+    touch-action: manipulation;
+    text-decoration: none;
+}
+div#info-company {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+div#info-data {
+    display: flex;
+    justify-content: space-between;
+}
+div#info-data h1 {
+    font-size: 1.8rem;
+    display: inline;
+    font-weight: 500;
+    line-height: 1.25;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+div#info-data ul#info-details {
+    width: 232px;
+    list-style: none;
+    flex-shrink: 0;
+}
+div#info-data ul#info-details li a {
+    color: black;
+    display: flex;
+    text-decoration: none;
+}
+div#info-data ul#info-details li a h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    align-self: center;
+    vertical-align: baseline;
+}
+div#info-data ul#info-details li a img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+ul.items-list {
+    list-style: none inside;
+}
+ul.items-list li {
+    display: flex;
+    margin: 10px 0;
+}
+ul.items-list li div.data-container {
+    flex-grow: 1;
+}
+ul.items-list li div.data-container a {
+    display: flex;
+    color: black;
+    text-decoration: none;
+}
+ul.items-list li div.data-container a div.logo-image-container {
+    margin: 10px 0;
+}
+ul.items-list li div.data-container a div.logo-image-container img.logo-image {
+    height: 60px;
+    width: 60px;
+}
+ul.items-list li div.data-container a div.list-info {
+    margin: 0 10px;
+}
+ul.items-list li div.data-container a div.list-info h3 {
+    color: black;
+    margin: 10px;
+}
+ul.items-list li div.data-container a div.list-info h4, ul.items-list li div.data-container a div.list-info time {
+    color: gray;
+    margin: 0 5px;
+}
+ul.items-list li div.data-container a div.list-info p {
+    color: black;
+    margin: 0 5px;
+}
+ol.items-list {
+    list-style: none inside;
+}
+ol.items-list li div.aptitude-info a {
+    text-decoration: none;
+    color: grey;
+}
+ol.items-list li div.aptitude-info a span {
+    color: black;
+}
+div.achivements {
+    display: flex;
+    position: relative;
+    padding: 16px 0 0 12px;
+}
+div.achivements h3 {
+    color: #0a66c2;
+    min-width: 64px;
+    line-height: 36px;
+    margin-top: -3px;
+    padding-right: 12px;
+    font-size: 2rem;
+}
+div.achivements div.project-title h3 {
+    font-size: 1.4rem;
+    text-align: center;
+}
+div.achivements ul.project-list li {
+    display: inline;
+}
+.card-titles {
+    display: flex;
+}
+.card-titles h2 {
+    flex: 10;
+    margin: auto;
+}
+.card-titles .btn-edit {
+    flex: 1;
+    flex-direction: column;
+    align-self: flex-end;
+    justify-content: flex-end;
+    display: flex;
+    text-align: end;
+}
+#info-img {
+    display: flex;
+}
+.btn-right {
+    display: flex;
+    align-self: flex-end;
+}
+.fa-button,.fa {
+    color: black;
+    display: block;
+    height: 2.4rem;
+    width: 2.4rem;
+    line-height: 2.4rem;
+    text-align: center;
+    border-radius: 50%;
+    background: white;
+}
+.fa-button:hover,.fa:hover {
+    background: gray;
+}
+div#profile-background {
+    display: flex;
+    z-index: 1;
+}
+div#profile-background img {
+    width: 100%;
+    border-radius: 32px 32px 0 0;
+}
+.data-control{
+    display: flex;
+}
+
+.mr-auto{
+    margin-right: 0!important;
+    margin-left: auto!important;
+}
+*/
+/****css para skill***/

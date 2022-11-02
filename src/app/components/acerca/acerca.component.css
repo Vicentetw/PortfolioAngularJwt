@@ -1,0 +1,156 @@
+
+
+#inferior{
+  color: #FFF;
+  background: #000;
+  position:absolute; /*El div será ubicado con relación a la pantalla*/
+  left:0px; /*A la derecha deje un espacio de 0px*/
+  right:0px; /*A la izquierda deje un espacio de 0px*/
+  bottom:0px; /*Abajo deje un espacio de 0px*/
+  height:50px; /*alto del div*/
+  z-index:0;
+   }
+
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+
+
+
+
+
+
+.img-fluid{
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 2rem;
+}
+.content{
+    width: auto;
+}
+.banner{
+  position:relative;
+  background-size: contain;
+   
+   
+}
+
+.nombre{
+  bottom: -25px;
+  left: 10px;
+  font-family: "Open Sans", sans-serif;
+  color: #272829;
+}
+
+.fotoperfil{
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: #f0f6fb;
+  border-radius: 50%;
+  -webkit-filter: grayscale(100%); /* para poner foto en blanco y negro Chrome, Safari, Opera */
+  filter: grayscale(100%);
+  margin-top: -120px;
+  margin-left: 10px;
+  position: absolute;
+  max-height: 150px;
+
+
+}
+.perfil{
+    position: unset;
+    width: 15%;
+    height: 15%;
+    background-color: transparent;
+    
+}
+.arriba{
+ position: relative;
+padding-right: 15px;
+padding-left: 15px;
+
+
+
+}
+.abajo{
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 2rem;
+    z-index: 1;
+}
+
+/*for animation text Vicente*/
+.line {
+  position: relative;
+ /* top: 50%; margin: 0 auto;
+
+ */
+ margin-top: 20px;
+ margin-bottom: 15px;
+ border-width: 15px;
+  width: 16em;
+  color: #474747;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  text-align: initial;
+  white-space: nowrap;
+  overflow: hidden;
+  
+}
+
+/*Animation poner en steps la cantidad de caracteres*/
+.anim-typewriter {
+  animation: typewriter 4s steps(38) 1s 1 normal both,
+  blinkTextCursor 500ms steps(38) infinite normal;
+}
+@keyframes typewriter {
+  from {
+        width: 0;
+  }
+  to {
+        width: 18em;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+        border-right-color: transparent;
+  }
+}
+/* container flud personalizado */
+.container-fluid{
+  background-color: #6c63ff;
+  border-radius: 2rem;
+  height: 70%;
+}

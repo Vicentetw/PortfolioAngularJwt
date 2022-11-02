@@ -1,0 +1,11 @@
+/* container flud personalizado */
+.container-fluid{
+    background-color: #6c63ff;
+    border-radius: 2rem;
+    height: 20px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: auto;
+  }
+  
