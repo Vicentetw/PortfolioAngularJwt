@@ -10,7 +10,7 @@ import { Experiencia } from '../entidades/experiencia';
 export class ExperienciaService {
 experiencia: any
 private apiHerokuUrl = environment.apiUrl;
-  url:string="https://floating-chamber-24100.herokuapp.com/";
+  
 
 
   constructor(private http: HttpClient) { }

@@ -36,7 +36,7 @@ onLogin(): void{
       this.tokenService.setUserName(data.nombreUsuario);
       this.tokenService.setAuthorities(data.authorities);
       this.roles = data.authorities;
-      this.router.navigate(['login'])
+      this.router.navigate(['portfolio'])
       
     }, err =>{
       

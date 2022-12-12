@@ -31,7 +31,7 @@ isAdmin:boolean =false;
         console.log("El usuario es admin")
       } else
       console.log("El usuario NO ES admin")
-      this.router.navigate(['login'])
+      this.router.navigate(['portfolio'])
     })
   }
   logout(){
