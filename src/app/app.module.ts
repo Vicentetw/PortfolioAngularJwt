@@ -26,7 +26,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './services/auth.service.ts.old';
 import { ModificaComponent } from './components/modifica/modifica.component';
 import { EditButtonComponent } from './botones/edit-button/edit-button.component';
 import { ModificaSkillComponent } from './components/modifica-skill/modifica-skill.component';
