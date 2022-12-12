@@ -22,7 +22,8 @@ export const environment = {
     measurementId: "G-6N45V95T6P"
   
   },
-  apiUrl: 'https://perrotta-vicente-portfolio.herokuapp.com/'
+  apiUrl: 'https://portfolio-perrottavicente.koyeb.app/'
+  /*apiUrl: 'https://perrotta-vicente-portfolio.herokuapp.com/'*/
   
   /*apiUrl: 'http://localhost:8080/'*/
 };

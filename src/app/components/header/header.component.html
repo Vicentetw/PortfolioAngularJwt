@@ -21,14 +21,14 @@
     </svg>
   </a>
 
-  <div *ngIf="this.authService.estaLogeado">
-    <button class="btn btn-success m-2">Logueado</button>
+  <div>
+    <button *ngIf="" class="btn btn-success m-2">Logueado</button>
   </div>
 
-  <div *ngIf="!this.authService.estaLogeado">
+  <div>
     <button class="btn btn-light m-2" (click)="ruta()">Login</button>
   </div>
-  <div *ngIf="this.authService.estaLogeado">
+  <div>
     <button class="btn btn-light m-2" (click)="Salir()">Sign Out</button>
   </div>
   <div></div>

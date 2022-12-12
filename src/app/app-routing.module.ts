@@ -11,9 +11,9 @@ import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent},
   {path: 'portfolio', component: PortfolioComponent},
   {path: 'modifica', component: ModificaComponent},
-  {path: 'login', component: LoginComponent},
   {path: 'modifica-skill', component: ModificaSkillComponent},
   {path: 'modifica-experiencia', component: ModificaExperienciaComponent},
   {path: '',redirectTo:'portfolio',pathMatch:'full'},

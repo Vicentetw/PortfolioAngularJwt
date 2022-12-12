@@ -1,11 +1,27 @@
 .container{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    width:100vw;
-    height:100vh;
-}
-.card-header{
-    background-color: rgba(137, 137, 140, 0.19);
-border-bottom: 1px solid rgba(89, 13, 13, 0.13);
-}
+    background: rgb(2,0,36);
+     background: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%); 
+    }
+    
+    .backTrasnp{
+    background-color: rgba(0,0,0,1) !important
+    }
+    
+    /*inicio logo centrado*/
+    .brand_logo_container {
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        top: -80px;
+        border-radius: 50%;
+        background: #ffffff;
+        padding: 10px;
+        text-align: center;
+    }
+    .brand_logo {
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+    /*fin logo */

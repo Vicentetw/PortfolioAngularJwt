@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-//import data from 'src\assets\data\persona.json';
-//import { PersonaService } from "src/app/services/persona.service";
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
+
 
 
 @Component({
@@ -15,35 +17,27 @@ export class PortfolioComponent implements OnInit {
   edu ='Educación';
   hys = 'Hard & Soft Skills';
   proy ='Proyectos';
-  constructor( ){
+  roles!: string[];
+isAdmin:boolean =false;
+  constructor(private tokenService: TokenService, private authService: AuthService,public router: Router ){
     
   }
 
   ngOnInit(): void {
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(role =>{
+      if(role === 'ROLE_ADMIN'){
+        this.isAdmin = true;
+        console.log("El usuario es admin")
+      } else
+      console.log("El usuario NO ES admin")
+      this.router.navigate(['login'])
+    })
   }
-
-}
-
-/* esto lo traigo de app.component migrè todo a para separar portfolio de login y lo manejo desde app-routing.module.ts
-import { Component } from '@angular/core';
-import data from 'src\assets\data\persona.json';
-import { ApicallService } from './services/apicall.service';
-import persona from '*../../src/assets/data/persona.json';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'Perrotta Vicente';
-  subtitle =' Full Stack Developer';
-  exp = 'Experiencia';
-  edu ='Educación';
-  hys = 'Hard & Soft Skills';
-  proy ='Proyectos';
-  constructor(public apiCall:ApicallService){
-    
+  logout(){
+    this.tokenService.logOut() ;
+    window.location.reload();
+    this.router.navigate(['login']);
   }
 }
-*/
+

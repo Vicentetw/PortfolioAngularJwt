@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-home-button',
@@ -7,12 +8,12 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HomeButtonComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, public router :Router) { }
 
   ngOnInit(): void {
     
   }
 home(){
-  this.authService.router.navigate(['portfolio']);
+  this.router.navigate(['portfolio']);
 }
 }

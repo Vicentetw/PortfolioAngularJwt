@@ -26,11 +26,7 @@ public nuevo(nuevoUsuario: NuevoUsuario): Observable<any>{
 public login(loginUsuario: LoginUsuario): Observable<JwtDto>{
   return this.httpClient.post<JwtDto>(this.URL + 'login', loginUsuario); 
 }
- //logout y redirect to login
- SignOut(){
-  this.tokenService.logOut() ;
-  window.location.reload();
-  this.router.navigate(['login']);
-}
+
+ 
 
 }

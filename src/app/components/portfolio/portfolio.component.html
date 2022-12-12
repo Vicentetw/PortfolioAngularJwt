@@ -34,3 +34,9 @@
         </div>
     </div>
     <!--borrar fin-->
+    <div class="container">
+        hola acá un botón para logout
+        <button class="btn-danger" (click)="logout()">Logout</button>
+        <p *ngIf="this.isAdmin">usuario Admin Activo</p>
+        <p *ngIf="!this.isAdmin">usuario NOAdmin</p>
+    </div>

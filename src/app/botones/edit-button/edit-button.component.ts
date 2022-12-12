@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,15 +10,16 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class EditButtonComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit(): void {
   }
   Editar() {
     if (this.authService.estaLogeado)
-      this.authService.router.navigate(['modifica']);
+      this.router.navigate(['modifica']);
     else {
-      this.authService.router.navigate(['login']);
+      this.router.navigate(['login']);
     }
+    
   }
 }
