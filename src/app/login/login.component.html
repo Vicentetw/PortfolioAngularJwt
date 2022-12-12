@@ -11,42 +11,20 @@
       </div>
       <!-- Calling SignIn Api from AuthService -->
       <div class="form-group">
-        <input type="button" class="btn btn-primary btn-lg btn-block m-2" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+        <input type="button" class="btn btn-primary btn-lg btn-block m-2" value="Log in" >
       </div>
 
       <div   class="form-group">
-        <input  class="btn btn-primary btn-lg btn-block m-2 log-out" value="Log out" (click)="this.authService.SignOut()">
+        <input  class="btn btn-primary btn-lg btn-block m-2 log-out" value="Log out" >
       </div>
 
       
-     <!-- solo la letra O 
-      <div class="form-group">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      -->
-
-      <!-- Calling GoogleAuth Api from AuthService -->
-      
-      <!--por ahora dejo deshabilitado el login con google desde html y desde firebase
-      <div class="form-group">
-        <button type="button" class="btn btn-danger" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Log in with Google
-        </button>
-      </div>
-      <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
-      </div>
--->
+  
       
 
     </div>
 
-<!-- Calling GoogleAuth para registrarse, disable for now, see you later ArgentinaPrograma3
-    <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
-    </div>
-  -->
+
 
   </div>
 </div>
