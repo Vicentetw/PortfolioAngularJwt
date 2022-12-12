@@ -1,6 +1,10 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { JwtDto } from '../entidades/jwt-dto';
+import { LoginUsuario } from '../entidades/login-usuario';
+import { NuevoUsuario } from '../entidades/nuevo-usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +18,8 @@ public nuevo(nuevoUsuario: NuevoUsuario): Observable<any>{
   return this.httpClient.post<any>(this.URL +'nuevo', nuevoUsuario);
 }
 
-public login(loginUsuario: loginUsuario): Observable<JwtDto>{
-  return this.httpClient.post<JwtDTO>(this.URL + 'login', loginUsuario); 
+public login(loginUsuario: LoginUsuario): Observable<JwtDto>{
+  return this.httpClient.post<JwtDto>(this.URL + 'login', loginUsuario); 
 }
 
 }

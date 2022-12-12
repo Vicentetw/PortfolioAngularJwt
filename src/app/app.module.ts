@@ -11,7 +11,6 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { EducationComponent } from './components/education/education.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +25,6 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
-import { AuthService } from './services/auth.service.ts.old';
 import { ModificaComponent } from './components/modifica/modifica.component';
 import { EditButtonComponent } from './botones/edit-button/edit-button.component';
 import { ModificaSkillComponent } from './components/modifica-skill/modifica-skill.component';
@@ -35,6 +33,8 @@ import { EditSkillButtonComponent } from './botones/edit-skill-button/edit-skill
 import { EditExperienciaButtonComponent } from './botones/edit-experiencia-button/edit-experiencia-button.component';
 import { HomeButtonComponent } from './botones/home-button/home-button.component';
 import { ModificaExperienciaComponent } from './components/modifica-experiencia/modifica-experiencia.component';
+import { AuthService } from './services/auth.service';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -49,7 +49,6 @@ import { ModificaExperienciaComponent } from './components/modifica-experiencia/
     ProjectsComponent,
     EducationComponent,
     ContactComponent,
-    LoginComponent,
     FooterComponent,
     PortfolioComponent,
     ModificaComponent,
@@ -58,7 +57,8 @@ import { ModificaExperienciaComponent } from './components/modifica-experiencia/
     EditSkillButtonComponent,
     EditExperienciaButtonComponent,
     HomeButtonComponent,
-    ModificaExperienciaComponent
+    ModificaExperienciaComponent,
+    LoginComponent
     
   ],
   imports: [
