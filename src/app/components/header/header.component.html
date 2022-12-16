@@ -26,7 +26,7 @@
   </div>
 
   <div>
-    <button class="btn btn-light m-2" (click)="ruta()">Login</button>
+    <button  *ngIf="!this.isLogged"   class="btn btn-light m-2" (click)="ruta()">Login</button>
   </div>
   <div>
     <button class="btn btn-light m-2" (click)="Salir()">Sign Out</button>

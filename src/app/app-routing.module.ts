@@ -7,15 +7,17 @@ import { ModificaSkillComponent } from './components/modifica-skill/modifica-ski
 import { ModificaComponent } from './components/modifica/modifica.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { LoginComponent } from './login/login.component';
+import { GuardService as guard } from './services/guard.service';
 
 
 
 const routes: Routes = [
+  {path: '', component: PortfolioComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'portfolio', component: PortfolioComponent},
-   {path: 'modifica', component: ModificaComponent},
-  {path: 'modifica-skill', component: ModificaSkillComponent},
-  {path: 'modifica-experiencia', component: ModificaExperienciaComponent},
+  {path: 'portfolio', component: PortfolioComponent, canActivate:[guard], data: {expectedRole: ['admin', 'user']}},
+   {path: 'modifica', component: ModificaComponent, canActivate:[guard], data: {expectedRole: ['admin', 'user']}},
+  {path: 'modifica-skill', component: ModificaSkillComponent, canActivate:[guard], data: {expectedRole: ['admin', 'user']}},
+  {path: 'modifica-experiencia', component: ModificaExperienciaComponent, canActivate:[guard], data: {expectedRole: ['admin', 'user']}},
   {path: '',redirectTo:'login',pathMatch:'full'},
   {path: ' ', component: Error404Component },
   {path: '**', component: Error404Component},

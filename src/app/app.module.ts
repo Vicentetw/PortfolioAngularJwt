@@ -35,6 +35,7 @@ import { HomeButtonComponent } from './botones/home-button/home-button.component
 import { ModificaExperienciaComponent } from './components/modifica-experiencia/modifica-experiencia.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './login/login.component';
+import { InterceptorService } from './services/interceptor.service';
 
 
 
@@ -80,7 +81,9 @@ import { LoginComponent } from './login/login.component';
       
     })
   ],
-  providers: [AuthService],
+  providers: [
+    InterceptorService
+  ],
   //componente principal
   bootstrap: [AppComponent]
 })

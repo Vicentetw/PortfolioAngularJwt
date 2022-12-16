@@ -13,7 +13,7 @@ export class PersonaService {
   private apiHerokuUrl = environment.apiUrl;
   persona: any;
   cargada = false;
-  url:string="https://floating-chamber-24100.herokuapp.com";
+  url:string="https://portfolio-perrottavicente.koyeb.app/";
   
   constructor(private http:HttpClient) {
     console.log("El servicio está corriendo");

@@ -25,6 +25,7 @@ ngOnInit(): void {
     this.isLogged = true;
     this.isLogginFail = false;
     this.roles = this.tokenService.getAuthorities();
+    this.router.navigate(['portfolio'])
   }
 }
 onLogin(): void{

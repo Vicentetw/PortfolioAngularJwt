@@ -7,19 +7,17 @@ export const environment = {
 
   firebase : {
 
-    apiKey: "AIzaSyBkEGzM2kunsmU9fqgEz5dgef76_of-mAc",
+    apiKey: "AIzaSyByIbkJT-aN81VRDsRjgOyvy17vZeALmbw",
+
+    authDomain: "perrotta-vicente.firebaseapp.com",
   
-    authDomain: "portfolio-5e5ac.firebaseapp.com",
+    projectId: "perrotta-vicente",
   
-    projectId: "portfolio-5e5ac",
+    storageBucket: "perrotta-vicente.appspot.com",
   
-    storageBucket: "portfolio-5e5ac.appspot.com",
+    messagingSenderId: "695663752848",
   
-    messagingSenderId: "208633892945",
-  
-    appId: "1:208633892945:web:0bd6f4966727ed4c376870",
-  
-    measurementId: "G-6N45V95T6P"
+    appId: "1:695663752848:web:af7e9611e6ad9deb95ca15"
   
   },
   apiUrl: 'https://portfolio-perrottavicente.koyeb.app/'

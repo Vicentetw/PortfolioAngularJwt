@@ -18,12 +18,16 @@ export class PortfolioComponent implements OnInit {
   hys = 'Hard & Soft Skills';
   proy ='Proyectos';
   roles!: string[];
-isAdmin:boolean =false;
+  isAdmin:boolean =false;
+  isLogged = false;
+  nombreUsuario ='';
+
   constructor(private tokenService: TokenService, private authService: AuthService,public router: Router ){
     
   }
 
   ngOnInit(): void {
+    /*
     this.roles = this.tokenService.getAuthorities();
     this.roles.forEach(role =>{
       if(role === 'ROLE_ADMIN'){
@@ -33,6 +37,14 @@ isAdmin:boolean =false;
       console.log("El usuario NO ES admin")
       this.router.navigate(['portfolio'])
     })
+    */
+    if(this.tokenService.getToken()) {
+      this.isLogged = true;
+      this.nombreUsuario = this.tokenService.getUserName();
+    } else {
+      this.isLogged = false;
+      this.nombreUsuario = '';
+    }
   }
   logout(){
     this.tokenService.logOut() ;

@@ -1,0 +1,15 @@
+{"persona":
+
+{
+"id":"1",
+"nombre":"Vicente",
+"apellido": "Perrotta",
+"domicilio": "Honduras 293",
+"fechaNac": "1972/07/19",
+"telefono": "2804270349",
+"correo": "perrottavicente@gmail.com",
+"sobre_mi": "Full Stack Developer",
+"url_foto": "foto.jpg"
+}
+
+}

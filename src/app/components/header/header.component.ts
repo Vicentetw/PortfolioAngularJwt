@@ -9,13 +9,21 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  roles: string[] = [];
+  errMsj!: string;
+  isLogged = false;
+  isLogginFail = false;
   constructor(private router: Router, public authService: AuthService, public tokenService: TokenService) {
     
 
   }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.roles = this.tokenService.getAuthorities();
+    }
   }
   ruta() {
 
@@ -25,7 +33,8 @@ export class HeaderComponent implements OnInit {
   
   
   Salir() {
-    this.tokenService.logOut();
-    
+    this.tokenService.logOut() ;
+    window.location.reload();
+    this.router.navigate(['login']);
   }
 }

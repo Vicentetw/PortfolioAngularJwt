@@ -12,7 +12,7 @@ export class EducacionService {
 
   educacion: any;
   private apiHerokuUrl = environment.apiUrl;
-  url:string="https://floating-chamber-24100.herokuapp.com/";
+  url:string="https://portfolio-perrottavicente.koyeb.app/";
 
   constructor(private http: HttpClient) { }
 
