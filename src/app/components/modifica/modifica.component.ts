@@ -8,6 +8,8 @@ import { NgForm, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import {NgbConfig} from '@ng-bootstrap/ng-bootstrap';
 import { RolService } from 'src/app/services/rol.service';
+import { GuardService } from 'src/app/services/guard.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-modifica',
@@ -24,7 +26,7 @@ export class ModificaComponent implements OnInit {
   public deleteEducacion!: Educacion;
   
 
-  constructor(public authService: AuthService, private educacionService: EducacionService,ngbConfig: NgbConfig, private rol: RolService) { 
+  constructor(private tokenService: TokenService,public authService: AuthService, private educacionService: EducacionService,ngbConfig: NgbConfig, private rol: RolService, private guard:GuardService) { 
    /* this.educacionForm = FormGroup.group(
       {
       id: [''],
@@ -42,7 +44,9 @@ export class ModificaComponent implements OnInit {
   ngOnInit() {
 
     this.rol.getRol();
+    this.tokenService.getAuthorities();
     this.getEducacion();
+    console.log('******mi rol en modifica es:' + this.tokenService.roles);
     
   }
 /*************Educacion*************/

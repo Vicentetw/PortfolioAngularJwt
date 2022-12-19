@@ -5,6 +5,7 @@ import { Educacion } from 'src/app/interfaces/Educacion'
 import { environment } from 'src/environments/environment';
 import { config } from '../data/Config';
 
+
 @Injectable({
   providedIn: 'root'
 })

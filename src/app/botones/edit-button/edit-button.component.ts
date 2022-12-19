@@ -27,23 +27,19 @@ export class EditButtonComponent implements OnInit {
       this.roles.forEach(role => {
         if(role ==='ROLE_ADMIN'){
           this.isAdmin = true;
-          console.log('en edit el rol es:  ' + this.isAdmin)
+          
         
         }else{
           this.isAdmin = false;
         
         }
       })
-            
+          
+    
     
     
   }
   Editar() {
-    if (this.isAdmin)
-      this.router.navigate(['modifica']);
-    else {
-      this.router.navigate(['login']);
-    }
-    
+       this.router.navigate(['modifica']);
   }
 }

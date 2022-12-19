@@ -14,7 +14,7 @@
         <h4 class="educacion"> Educacion 
           
           <button ngbTooltip="Agregar educación" class="btn btn-success" (click)="onOpenModal(null!,'add')"
-            *ngIf="this.isAdmin"><span class="btn-primary"></span> Agregar educacion</button>
+            *ngIf="!isAdmin"><span class="btn-primary"></span> Agregar educacion</button>
             
         </h4>
         <div class="container">
@@ -147,7 +147,7 @@
             <label for="persona_id">Id Persona</label><br>
             <input ngModel="{{editEducacion.persona_id}}" type="number" id="persona_id" name="persona_id"
               class="form-control">
-            <input type="hidden" name="id" ngModel="{{editEducacion?.id}} "><br>
+            <input type="hidden" name="id" ngModel="{{editEducacion.id}} "><br>
             <div class="modal-footer">
               <button id="update-educacion-modal" type="button" class="btn btn-light"
                 data-dismiss="modal">Cancelar</button>
