@@ -10,7 +10,8 @@
             Educación
   
             </h1>
-            <app-edit-button></app-edit-button>
+            
+            <app-edit-button *ngIf="this.isAdmin"></app-edit-button>
             <div class="line-mf"></div>
           </div>
         </div>

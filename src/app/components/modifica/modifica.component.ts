@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { NgForm, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import {NgbConfig} from '@ng-bootstrap/ng-bootstrap';
+import { RolService } from 'src/app/services/rol.service';
 
 @Component({
   selector: 'app-modifica',
@@ -17,13 +18,13 @@ import {NgbConfig} from '@ng-bootstrap/ng-bootstrap';
 export class ModificaComponent implements OnInit {
   
   public educacionList: Educacion[] = [];
-  isUserLogged!:boolean
+  isAdmin:boolean =false;
    educacionForm!: FormGroup;
   public editEducacion!: Educacion;
   public deleteEducacion!: Educacion;
   
 
-  constructor(public authService: AuthService, private educacionService: EducacionService,ngbConfig: NgbConfig) { 
+  constructor(public authService: AuthService, private educacionService: EducacionService,ngbConfig: NgbConfig, private rol: RolService) { 
    /* this.educacionForm = FormGroup.group(
       {
       id: [''],
@@ -40,7 +41,7 @@ export class ModificaComponent implements OnInit {
 
   ngOnInit() {
 
-    this.isUserLogged = this.authService.estaLogeado;
+    this.rol.getRol();
     this.getEducacion();
     
   }

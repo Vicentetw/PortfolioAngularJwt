@@ -27,7 +27,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /*
+    
     this.roles = this.tokenService.getAuthorities();
     this.roles.forEach(role =>{
       if(role === 'ROLE_ADMIN'){
@@ -36,8 +36,8 @@ export class PortfolioComponent implements OnInit {
       } else
       console.log("El usuario NO ES admin")
       this.router.navigate(['portfolio'])
-    })
-    */
+    });
+    
     if(this.tokenService.getToken()) {
       this.isLogged = true;
       this.nombreUsuario = this.tokenService.getUserName();

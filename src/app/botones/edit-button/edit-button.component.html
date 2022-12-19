@@ -1,5 +1,6 @@
-<div *ngIf="this.authService.estaLogeado">
+<div>
       
        <button  class="btn btn-secondary bi bi-pencil m-2" (click)="Editar();"><span class="glyphicon glyphicon-pencil"></span> Editar Educación</button>
-    
+    <p *ngIf="this.isAdmin">El usuario es Admin</p>
       </div>
+     

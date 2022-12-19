@@ -22,14 +22,14 @@
   </a>
 
   <div>
-    <button *ngIf="" class="btn btn-success m-2">Logueado</button>
+    <button *ngIf="this.isLogged" class="btn btn-success m-2">Logueado</button>
   </div>
 
   <div>
     <button  *ngIf="!this.isLogged"   class="btn btn-light m-2" (click)="ruta()">Login</button>
   </div>
   <div>
-    <button class="btn btn-light m-2" (click)="Salir()">Sign Out</button>
+    <button *ngIf="this.isLogged" class="btn btn-light m-2" (click)="Salir()">Sign Out</button>
   </div>
   <div></div>
 
