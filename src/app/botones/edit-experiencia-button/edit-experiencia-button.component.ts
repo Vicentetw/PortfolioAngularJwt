@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; 
 import { AuthService } from 'src/app/services/auth.service';
+import { GuardService } from 'src/app/services/guard.service';
 import { TokenService } from 'src/app/services/token.service';
 @Component({
   selector: 'app-edit-experiencia-button',
@@ -8,23 +9,35 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./edit-experiencia-button.component.css']
 })
 export class EditExperienciaButtonComponent implements OnInit {
-  roles!: string[];
+  roles: Array<string> =[];
   isAdmin:boolean =false;
   isLogged = false;
 
   constructor(
+    private guard: GuardService,
     private tokenService: TokenService,
     private authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+   this.getRoles();
+          
   }
   Editar() {
-    if (this.authService.estaLogeado)
-      this.router.navigate(['modifica-experiencia']);
-    else {
-      this.router.navigate(['login']);
-    }
+  this.router.navigate(['modifica-experiencia']);
+  }
+  getRoles(){
+    this.roles = this.tokenService.getAuthorities(); 
+    this.roles.forEach(role => {
+      if(role ==='ROLE_ADMIN'){
+        this.isAdmin = true;
+        
+      
+      }else{
+        this.isAdmin = false;
+      
+      }
+    })
   }
 }

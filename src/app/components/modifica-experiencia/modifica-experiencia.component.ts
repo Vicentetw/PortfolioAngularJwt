@@ -6,21 +6,30 @@ import { Observable } from 'rxjs';
 import { NgForm, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import {NgbConfig} from '@ng-bootstrap/ng-bootstrap';
+import { TokenService } from 'src/app/services/token.service';
 @Component({
   selector: 'app-modifica-experiencia',
   templateUrl: './modifica-experiencia.component.html',
-  styleUrls: ['./modifica-experiencia.component.css']
+  styleUrls: ['./modifica-experiencia.component.css'],
+  providers:[ExperienciaService]
 })
 export class ModificaExperienciaComponent implements OnInit {
+  roles!:string[];
   public experienciaList: Experiencia[] = [];
-  isUserLogged!:boolean
   experienciaForm!: FormGroup;
+  isAdmin:boolean =false;
   public editExperiencia!: Experiencia;
   public deleteExperiencia!: Experiencia;
-  constructor(public authService: AuthService, private experienciaService: ExperienciaService ,ngbConfig: NgbConfig) { }
+  constructor(public authService: AuthService, private tokenService:TokenService,private experienciaService: ExperienciaService ,ngbConfig: NgbConfig) { }
 
   ngOnInit(): void {
-    this.isUserLogged = this.authService.estaLogeado;
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(role=>{
+      if(role ==='ROLE_ADMIN'){
+        this.isAdmin=true;
+      }
+    })
+    
     this.getExperiencia();
   }
 /***********Experiencia inicio ***************/

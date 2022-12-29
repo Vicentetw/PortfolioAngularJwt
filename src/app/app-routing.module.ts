@@ -14,7 +14,7 @@ import { GuardService as guard } from './services/guard.service';
 const routes: Routes = [
   {path: '', component: PortfolioComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'portfolio', component: PortfolioComponent, canActivate:[guard], data: {expectedRole: ['admin', 'user']}},
+  {path: 'portfolio', component: PortfolioComponent},
    {path: 'modifica', component: ModificaComponent, canActivate:[guard], data: {expectedRole: ['admin', 'user']}},
   {path: 'modifica-skill', component: ModificaSkillComponent, canActivate:[guard], data: {expectedRole: ['admin', 'user']}},
   {path: 'modifica-experiencia', component: ModificaExperienciaComponent, canActivate:[guard], data: {expectedRole: ['admin', 'user']}},

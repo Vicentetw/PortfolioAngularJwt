@@ -1,15 +1,19 @@
 import { Component,Input, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { Educacion } from 'src/app/entidades/educacion';
+
+
 /*import { FormBuilder, FormGroup, Validators } from '@angular/forms';*/
 import { EducacionService } from 'src/app/services/educacion.service';
 import { Observable } from 'rxjs';
 import { NgForm, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import {NgbConfig} from '@ng-bootstrap/ng-bootstrap';
-import { RolService } from 'src/app/services/rol.service';
-import { GuardService } from 'src/app/services/guard.service';
+import { Educacion } from 'src/app/interfaces/Educacion'; 
 import { TokenService } from 'src/app/services/token.service';
+import { GuardService } from 'src/app/services/guard.service';
+import { Router } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-modifica',
@@ -18,40 +22,66 @@ import { TokenService } from 'src/app/services/token.service';
   providers:[EducacionService]
 })
 export class ModificaComponent implements OnInit {
-  
-  public educacionList: Educacion[] = [];
+  roles!:string[];
+  public educacionList: Educacion[] =[];
   isAdmin:boolean =false;
-   educacionForm!: FormGroup;
+  educacionForm!: FormGroup;
   public editEducacion!: Educacion;
   public deleteEducacion!: Educacion;
+  isLogged = false;
+  nombreUsuario ='';
+  realRole?: string;
+  public educacion: Educacion[] =[];
+  constructor(private tokenService: TokenService,ngbConfig:NgbConfig,private educacionService:EducacionService,private guard:GuardService) { 
   
 
-  constructor(private tokenService: TokenService,public authService: AuthService, private educacionService: EducacionService,ngbConfig: NgbConfig, private rol: RolService, private guard:GuardService) { 
-   /* this.educacionForm = FormGroup.group(
-      {
-      id: [''],
-      fecha_inicio: [''],
-      fecha_egreso: ['', Validators.required],
-      titulo: ['', Validators.required],
-      institucion: ['', Validators.required],
-      persona_id: ['', Validators.required],
-    }
-    );
-    */
-
   }
 
-  ngOnInit() {
-
-    this.rol.getRol();
-    this.tokenService.getAuthorities();
+  ngOnInit():void {
+    this.getRoles();
     this.getEducacion();
-    console.log('******mi rol en modifica es:' + this.tokenService.roles);
     
-  }
+        
+ 
+  
+
+
+}
+    getRoles(){
+      this.roles = this.tokenService.getAuthorities();
+      this.roles.forEach(role =>{
+        if(role === 'ROLE_ADMIN'){
+          this.isAdmin = true;
+          console.log("El usuario es admin")
+        } else
+        this.isAdmin = false;
+        console.log("El usuario NO ES admin")
+       
+      });
+      
+      if(this.tokenService.getToken()) {
+        this.isLogged = true;
+        this.nombreUsuario = this.tokenService.getUserName();
+        
+      } else {
+        this.isLogged = false;
+        this.nombreUsuario = '';
+      }
+    }
+  
+    
 /*************Educacion*************/
   public getEducacion(): void {
     this.educacionService.getEducacion().subscribe(
+    dataedu =>{
+      this.educacionList=dataedu;
+      
+    }
+      )
+  }
+  public getEducacion2(): void {
+    
+    this.educacionService.obtenerDatosEducacion().subscribe(
       (response:Educacion[]) => {
         this.educacionList = response;
       },
@@ -59,8 +89,7 @@ export class ModificaComponent implements OnInit {
         alert(error.message);
       }
     );
-  }
-
+    }
   public onAddEducacion(addForm: NgForm):void {
     document.getElementById('add-educacion-modal')?.click();
     this.educacionService.addEducacion(addForm.value).subscribe(

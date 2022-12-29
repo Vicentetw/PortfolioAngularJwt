@@ -14,6 +14,7 @@ export class AuthService {
 URL = environment.apiUrl + 'auth/';
 estaLogeado = false;
 
+
   constructor(
     private httpClient: HttpClient,
     private router:Router

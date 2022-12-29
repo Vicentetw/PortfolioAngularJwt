@@ -25,7 +25,7 @@ export class EditSkillButtonComponent implements OnInit {
     if (this.authService.estaLogeado)
     this.router.navigate(['modifica-skill']);
     else{
-      this.router.navigate(['login']);
+      this.router.navigate(['modifica-skill']);
     }
   }
 }

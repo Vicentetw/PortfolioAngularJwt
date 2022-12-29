@@ -15,26 +15,16 @@ export class EditButtonComponent implements OnInit {
   roles: Array<string> =[];
   isAdmin:boolean =false;
   isLogged = false;
-  
-  constructor(
+  nombreUsuario ='';
+    constructor(
     private guard: GuardService,
     private tokenService: TokenService,
     private authService: AuthService,
     private router: Router) { }
 
   ngOnInit(): void {
-    this.roles = this.tokenService.getAuthorities(); 
-      this.roles.forEach(role => {
-        if(role ==='ROLE_ADMIN'){
-          this.isAdmin = true;
-          
-        
-        }else{
-          this.isAdmin = false;
-        
-        }
-      })
-          
+    
+    this.getRoles();   
     
     
     
@@ -42,4 +32,39 @@ export class EditButtonComponent implements OnInit {
   Editar() {
        this.router.navigate(['modifica']);
   }
-}
+  getRoles2(){
+    this.roles = this.tokenService.getAuthorities(); 
+    this.roles.forEach(role => {
+      if(role ==='ROLE_ADMIN'){
+        this.isAdmin = true;
+        
+      
+      }else{
+        this.isAdmin = false;
+      
+      }
+    })
+  }
+  getRoles(){
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(role =>{
+      if(role === 'ROLE_ADMIN'){
+        this.isAdmin = true;
+        console.log("El usuario es admin")
+      } else
+      this.isAdmin = false;
+      console.log("El usuario NO ES admin")
+      this.router.navigate(['portfolio'])
+    });
+    
+    if(this.tokenService.getToken()) {
+      this.isLogged = true;
+      this.nombreUsuario = this.tokenService.getUserName();
+      
+    } else {
+      this.isLogged = false;
+      this.nombreUsuario = '';
+    }
+  }
+  }
+

@@ -4,18 +4,16 @@
   <app-home-button></app-home-button>
 </div>
 
-
-
 <!--Comienzo Educacion -->
 <div>
   <div>
     <div class="contenido" id="main-container">
       <div id="educacion">
-        <h4 class="educacion"> Educacion 
-          
+        <h4 class="educacion"> Educacion
+
           <button ngbTooltip="Agregar educación" class="btn btn-success" (click)="onOpenModal(null!,'add')"
             *ngIf="!isAdmin"><span class="btn-primary"></span> Agregar educacion</button>
-            
+
         </h4>
         <div class="container">
           <div class="columnas" *ngFor="let e of educacionList">
@@ -30,7 +28,7 @@
 
 
               </p>
-              <span id="eliminar-editar-educacion" >
+              <span id="eliminar-editar-educacion">
                 <button ngbTooltip="Editar educación" type="button" class="botones_editar_borrar"
                   (click)="onOpenModal(e,'edit')">
                   <i class="fa-solid fa-pen"></i>Editar
@@ -90,8 +88,8 @@
             <label for="id" type="hidden" class="oculto">Id</label><br>
             <input ngModel type="number" id="id" name="id" class="form-control oculto">
             <label for="fecha_inicio">Fecha Inicio</label><br>
-            <input ngModel  type="text" id="fecha_inicio" name="fecha_inicio"
-              placeholder="yyyy-mm-dd" class="form-control">
+            <input ngModel type="text" id="fecha_inicio" name="fecha_inicio" placeholder="yyyy-mm-dd"
+              class="form-control">
             <label for="fecha_egreso">Fecha egreso</label><br>
             <input ngModel type="text" id="fecha_egreso" name="fecha_egreso" placeholder="yyyy-mm-dd"
               class="form-control">
@@ -124,7 +122,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Editar</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Editar2</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -133,17 +131,23 @@
           <form #editForm="ngForm">
             <label type="hidden" for="id">ID</label><br>
             <input type="hidden" ngModel="{{editEducacion.id}} " type="number" id="id" name="id" class="form-control">
-            <label for="fecha_inicio">Fecha inicio</label><br>
-            <input ngModel="{{editEducacion.fecha_inicio}} " type="text" id="fecha_inicio" name="fecha_inicio"
-              class="form-control">
-            <label for="fecha_egreso">Fecha egreso</label><br>
-            <input ngModel="{{editEducacion.fecha_egreso}}" type="text" id="fecha_egreso" name="fecha_egreso"
-              class="form-control">
+
             <label for="titulo">Título</label><br>
             <input ngModel="{{editEducacion.titulo}}" type="text" id="titulo" name="titulo" class="form-control">
+
             <label for="institucion">Institucion</label><br>
             <input ngModel="{{editEducacion.institucion}}" type="text" id="institucion" name="institucion"
               class="form-control">
+
+            <label for="fecha_egreso">Fecha egreso</label><br>
+            <input ngModel="{{editEducacion.fecha_egreso}}" type="text" id="fecha_egreso" name="fecha_egreso"
+              class="form-control">
+
+            <label for="fecha_inicio">Fecha inicio</label><br>
+            <input ngModel="{{editEducacion.fecha_inicio}} " type="text" id="fecha_inicio" name="fecha_inicio"
+              class="form-control">
+
+
             <label for="persona_id">Id Persona</label><br>
             <input ngModel="{{editEducacion.persona_id}}" type="number" id="persona_id" name="persona_id"
               class="form-control">
@@ -197,7 +201,3 @@
 </div>
 <!-- Fin Modal Borrar -->
 <!--termina MODIFICA EDUCACION-->
-
-
-
-

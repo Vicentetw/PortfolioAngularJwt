@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Experiencia } from 'src/app/entidades/experiencia';
 import { AuthService } from 'src/app/services/auth.service';
+import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { TokenService } from 'src/app/services/token.service';
 
 
@@ -22,12 +24,20 @@ export class PortfolioComponent implements OnInit {
   isLogged = false;
   nombreUsuario ='';
 
-  constructor(private tokenService: TokenService, private authService: AuthService,public router: Router ){
+  constructor(private tokenService: TokenService, private authService: AuthService,public router: Router,private experiencia :ExperienciaService ){
     
   }
-
+public pruebas: Experiencia[] =[];
   ngOnInit(): void {
     
+    this.getRoles();
+  }
+  logout(){
+    this.tokenService.logOut() ;
+    window.location.reload();
+    this.router.navigate(['login']);
+  }
+  getRoles(){
     this.roles = this.tokenService.getAuthorities();
     this.roles.forEach(role =>{
       if(role === 'ROLE_ADMIN'){
@@ -45,11 +55,6 @@ export class PortfolioComponent implements OnInit {
       this.isLogged = false;
       this.nombreUsuario = '';
     }
-  }
-  logout(){
-    this.tokenService.logOut() ;
-    window.location.reload();
-    this.router.navigate(['login']);
   }
 }
 

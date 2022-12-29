@@ -14,7 +14,7 @@ private apiHerokuUrl = environment.apiUrl;
   
 
 
-  constructor(private http: HttpClient,public tokenService: TokenService) { }
+  constructor(private http: HttpClient,private tokenService: TokenService) { }
   ngOnInit(): void {
     this.tokenService.getToken();
       
