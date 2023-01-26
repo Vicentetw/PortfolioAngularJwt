@@ -12,7 +12,7 @@ import { TokenService } from 'src/app/services/token.service';
   providers:[EducacionService]
 })
 export class EducationComponent implements OnInit {
-
+ 
   public educacion: Educacion[] = [];
   realRole?: string;
   isAdmin:boolean = false;
@@ -25,7 +25,7 @@ constructor(private eService:EducacionService, private guard:GuardService,privat
   this.getRol();
   this.eService.obtenerDatosEducacion().subscribe(data2 => {
     this.educacion=data2;
-  
+        
   })
   
 }

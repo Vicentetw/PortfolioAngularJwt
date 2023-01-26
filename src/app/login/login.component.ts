@@ -1,8 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginUsuario } from '../entidades/login-usuario';
 import { AuthService } from '../services/auth.service';
 import { TokenService } from '../services/token.service';
+import { NgbToast } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -14,12 +16,13 @@ export class LoginComponent implements OnInit {
   isLogged = false;
   isLogginFail = false;
   loginUsuario!: LoginUsuario;
-  nombreUsuario!: string;
+  userName!: string;
   password! : string;
   roles: string[] = [];
   errMsj!: string;
+  
 
- constructor(public authService: AuthService, public tokenService: TokenService, public router: Router){ }
+ constructor(private authService: AuthService, private tokenService: TokenService, private router: Router){ }
 ngOnInit(): void {
   if(this.tokenService.getToken()){
     this.isLogged = true;
@@ -29,12 +32,12 @@ ngOnInit(): void {
   }
 }
 onLogin(): void{
-  this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
+  this.loginUsuario = new LoginUsuario(this.userName, this.password); 
   this.authService.login(this.loginUsuario).subscribe(data =>{
       this.isLogged = true;
       this.isLogginFail = false;
       this.tokenService.setToken(data.token);
-      this.tokenService.setUserName(data.nombreUsuario);
+      this.tokenService.setUserName(data.userName);
       this.tokenService.setAuthorities(data.authorities);
       this.roles = data.authorities;
       this.router.navigate(['/'])

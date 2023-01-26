@@ -6,6 +6,7 @@ import { TokenService } from './token.service';
 })
 export class RolService {
   isAdmin:boolean = false;
+
   constructor(private tokenService:TokenService) { }
 
 
@@ -16,6 +17,7 @@ export class RolService {
         if(role === 'ROLE_ADMIN'){
           this.isAdmin = true;
         }
+        
         
       });
   

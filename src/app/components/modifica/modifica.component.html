@@ -1,18 +1,15 @@
 <app-header class="image"><app-home-button></app-home-button></app-header>
 <!--Boton home-->
-<div>
-  <app-home-button></app-home-button>
-</div>
 
 <!--Comienzo Educacion -->
 <div>
   <div>
     <div class="contenido" id="main-container">
       <div id="educacion">
-        <h4 class="educacion"> Educacion
+        <h4 class="educacion"> Educacion estás logeado como: {{roles}} {{userName}}
 
           <button ngbTooltip="Agregar educación" class="btn btn-success" (click)="onOpenModal(null!,'add')"
-            *ngIf="!isAdmin"><span class="btn-primary"></span> Agregar educacion</button>
+            *ngIf="isAdmin"><span class="btn-primary"></span> Agregar educacion</button>
 
         </h4>
         <div class="container">
@@ -87,16 +84,26 @@
           -->
             <label for="id" type="hidden" class="oculto">Id</label><br>
             <input ngModel type="number" id="id" name="id" class="form-control oculto">
-            <label for="fecha_inicio">Fecha Inicio</label><br>
-            <input ngModel type="text" id="fecha_inicio" name="fecha_inicio" placeholder="yyyy-mm-dd"
-              class="form-control">
+            
+            <label for="titulo">Título</label><br>
+            <input ngModel type="text" id="titulo" name="titulo" class="form-control">
+            
+            <label for="institucion">Institucion</label><br>
+            <input ngModel type="text" id="institucion" name="institucion" class="form-control">
+
             <label for="fecha_egreso">Fecha egreso</label><br>
             <input ngModel type="text" id="fecha_egreso" name="fecha_egreso" placeholder="yyyy-mm-dd"
               class="form-control">
-            <label for="titulo">Título</label><br>
-            <input ngModel type="text" id="titulo" name="titulo" class="form-control">
-            <label for="institucion">Institucion</label><br>
-            <input ngModel type="text" id="institucion" name="institucion" class="form-control">
+
+            <label for="fecha_inicio">Fecha Inicio</label><br>
+            <input ngModel type="text" id="fecha_inicio" name="fecha_inicio" placeholder="yyyy-mm-dd"
+              class="form-control">
+           
+              
+            
+           
+              
+           
             <label for="persona_id">Id Persona</label><br>
             <input ngModel type="number" name="persona_id" id="persona_id" class="form-control">
             <div class="modal-footer">
@@ -122,7 +129,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Editar2</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Editar</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -130,28 +137,28 @@
         <div class="modal-body">
           <form #editForm="ngForm">
             <label type="hidden" for="id">ID</label><br>
-            <input type="hidden" ngModel="{{editEducacion.id}} " type="number" id="id" name="id" class="form-control">
+            <input type="hidden" ngModel="{{editEducacion?.id}} " type="number" id="id" name="id" class="form-control">
 
             <label for="titulo">Título</label><br>
-            <input ngModel="{{editEducacion.titulo}}" type="text" id="titulo" name="titulo" class="form-control">
+            <input ngModel="{{editEducacion?.titulo}}" type="text" id="titulo" name="titulo" class="form-control">
 
             <label for="institucion">Institucion</label><br>
-            <input ngModel="{{editEducacion.institucion}}" type="text" id="institucion" name="institucion"
+            <input ngModel="{{editEducacion?.institucion}}" type="text" id="institucion" name="institucion"
               class="form-control">
 
             <label for="fecha_egreso">Fecha egreso</label><br>
-            <input ngModel="{{editEducacion.fecha_egreso}}" type="text" id="fecha_egreso" name="fecha_egreso"
+            <input ngModel="{{editEducacion?.fecha_egreso}}" type="text" id="fecha_egreso" name="fecha_egreso"
               class="form-control">
 
             <label for="fecha_inicio">Fecha inicio</label><br>
-            <input ngModel="{{editEducacion.fecha_inicio}} " type="text" id="fecha_inicio" name="fecha_inicio"
+            <input ngModel="{{editEducacion?.fecha_inicio}} " type="text" id="fecha_inicio" name="fecha_inicio"
               class="form-control">
 
 
             <label for="persona_id">Id Persona</label><br>
-            <input ngModel="{{editEducacion.persona_id}}" type="number" id="persona_id" name="persona_id"
+            <input ngModel="{{editEducacion?.persona_id}}" type="number" id="persona_id" name="persona_id"
               class="form-control">
-            <input type="hidden" name="id" ngModel="{{editEducacion.id}} "><br>
+            <input type="hidden" name="id" ngModel="{{editEducacion?.id}} "><br>
             <div class="modal-footer">
               <button id="update-educacion-modal" type="button" class="btn btn-light"
                 data-dismiss="modal">Cancelar</button>

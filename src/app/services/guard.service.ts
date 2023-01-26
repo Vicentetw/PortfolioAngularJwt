@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TokenService } from './token.service';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,11 @@ import { TokenService } from './token.service';
 export class GuardService implements CanActivate{
   realRole?: string;
 
-  constructor(private tokenService: TokenService,
-    private router: Router) { }
+  constructor(
+    private tokenService: TokenService,
+    private router: Router,
+    private authService: AuthService
+    ) { }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const expectedRole =route.data['expectedRole'];
     const roles = this.tokenService.getAuthorities();

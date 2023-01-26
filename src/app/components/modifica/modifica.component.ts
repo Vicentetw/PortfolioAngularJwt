@@ -29,7 +29,7 @@ export class ModificaComponent implements OnInit {
   public editEducacion!: Educacion;
   public deleteEducacion!: Educacion;
   isLogged = false;
-  nombreUsuario ='';
+  userName ='';
   realRole?: string;
   public educacion: Educacion[] =[];
   constructor(private tokenService: TokenService,ngbConfig:NgbConfig,private educacionService:EducacionService,private guard:GuardService) { 
@@ -38,8 +38,10 @@ export class ModificaComponent implements OnInit {
   }
 
   ngOnInit():void {
+   this.roles = this.tokenService.getAuthorities();
     this.getRoles();
     this.getEducacion();
+    
     
         
  
@@ -53,25 +55,24 @@ export class ModificaComponent implements OnInit {
         if(role === 'ROLE_ADMIN'){
           this.isAdmin = true;
           console.log("El usuario es admin")
-        } else
-        this.isAdmin = false;
-        console.log("El usuario NO ES admin")
+        } 
+        
        
       });
       
       if(this.tokenService.getToken()) {
         this.isLogged = true;
-        this.nombreUsuario = this.tokenService.getUserName();
+        this.userName = this.tokenService.getUserName();
         
       } else {
         this.isLogged = false;
-        this.nombreUsuario = '';
+        this.userName = '';
       }
     }
   
     
 /*************Educacion*************/
-  public getEducacion(): void {
+  public getEducacion2(): void {
     this.educacionService.getEducacion().subscribe(
     dataedu =>{
       this.educacionList=dataedu;
@@ -79,7 +80,7 @@ export class ModificaComponent implements OnInit {
     }
       )
   }
-  public getEducacion2(): void {
+  public getEducacion(): void {
     
     this.educacionService.obtenerDatosEducacion().subscribe(
       (response:Educacion[]) => {
@@ -92,9 +93,11 @@ export class ModificaComponent implements OnInit {
     }
   public onAddEducacion(addForm: NgForm):void {
     document.getElementById('add-educacion-modal')?.click();
+   
     this.educacionService.addEducacion(addForm.value).subscribe(
       (response: Educacion) => {
         console.log(response);
+        console.log(addForm.value);
         this.getEducacion();
         addForm.reset();
         alert("Educacion ha sido agregada correctamente");
@@ -109,12 +112,27 @@ export class ModificaComponent implements OnInit {
   
 
 
+/*public onUpdateEducacion(addForm: NgForm):void {
+  document.getElementById('update-educacion-modal')?.click();
+  this.educacionService.updateEducacion(addForm.value).subscribe(
+  (response: Educacion) => {
+    console.log(response);
+    this.getEducacion();
+    alert("Educacion ha sido actualizada correctamente");
+    
+  },
+  (error: HttpErrorResponse) => {
+    alert(error.message);
+  }
+)
+
+}
+*/
 public onUpdateEducacion(educacion: Educacion):void {
   this.educacionService.updateEducacion(educacion).subscribe(
   (response: Educacion) => {
     console.log(response);
     this.getEducacion();
-    alert("Educacion ha sido actualizada correctamente");
     
   },
   (error: HttpErrorResponse) => {

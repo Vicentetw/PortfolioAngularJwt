@@ -29,7 +29,8 @@ export class EducacionService{
   }
   
   public updateEducacion(educacion: Educacion): Observable<Educacion> {
-    return this.http.put<Educacion>(`${this.apiHerokuUrl}educacion/update`, educacion);
+    //return this.http.put<Educacion>(`${this.apiHerokuUrl}educacion/update`, educacion);
+    return this.http.put<Educacion>(`${this.apiHerokuUrl}modifica/educacion`, educacion);
   } 
   public borrarEducacion(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiHerokuUrl}educacion/${id}`);
