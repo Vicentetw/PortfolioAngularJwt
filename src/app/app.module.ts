@@ -11,7 +11,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { EducationComponent } from './components/education/education.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from "@angular/forms";
@@ -35,7 +35,7 @@ import { HomeButtonComponent } from './botones/home-button/home-button.component
 import { ModificaExperienciaComponent } from './components/modifica-experiencia/modifica-experiencia.component';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './login/login.component';
-import { InterceptorService } from './services/interceptor.service';
+import { InterceptorService, interceptorProvider } from './services/interceptor.service';
 
 
 
@@ -82,7 +82,7 @@ import { InterceptorService } from './services/interceptor.service';
     })
   ],
   providers: [
-    InterceptorService
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
   ],
   //componente principal
   bootstrap: [AppComponent]

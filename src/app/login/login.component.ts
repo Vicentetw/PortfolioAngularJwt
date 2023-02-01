@@ -31,6 +31,8 @@ ngOnInit(): void {
     /*this.router.navigate(['portfolio'])*/
   }
 }
+
+
 onLogin(): void{
   this.loginUsuario = new LoginUsuario(this.userName, this.password); 
   this.authService.login(this.loginUsuario).subscribe(data =>{

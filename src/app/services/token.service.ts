@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs';
 
 const TOKEN_KEY = 'AuthToken';
 const USERNAME_KEY = 'AuthUsername';
 const AUTHORITIES_KEY = 'Authorities';
-
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+}; 
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +17,7 @@ export class TokenService {
 
   roles: Array<string> = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
 
   public setToken(token: string): void {
@@ -41,7 +46,7 @@ export class TokenService {
   }
   public getAuthorities(): string[] {
     this.roles = [];
-    if (sessionStorage.getItem(TOKEN_KEY)) {
+    if (sessionStorage.getItem(AUTHORITIES_KEY)) {
       JSON.parse(sessionStorage.getItem(AUTHORITIES_KEY)!).forEach((authority: any) => {
         this.roles.push(authority.authority);
       });

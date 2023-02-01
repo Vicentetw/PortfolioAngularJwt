@@ -54,7 +54,7 @@ export class ModificaComponent implements OnInit {
       this.roles.forEach(role =>{
         if(role === 'ROLE_ADMIN'){
           this.isAdmin = true;
-          console.log("El usuario es admin")
+          
         } 
         
        

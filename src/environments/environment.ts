@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  firebase : {
+  /*firebase : {
 
     apiKey: "AIzaSyByIbkJT-aN81VRDsRjgOyvy17vZeALmbw",
 
@@ -19,7 +19,7 @@ export const environment = {
   
     appId: "1:695663752848:web:af7e9611e6ad9deb95ca15"
   
-  },
+  },*/
   /*apiUrl: 'https://portfolio-perrottavicente.koyeb.app/'*/
   /*apiUrl: 'https://perrotta-vicente-portfolio.herokuapp.com/'*/
   

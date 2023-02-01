@@ -6,9 +6,10 @@ import { Router } from '@angular/router';
 import { JwtDto } from '../entidades/jwt-dto';
 import { LoginUsuario } from '../entidades/login-usuario';
 import { NuevoUsuario } from '../entidades/nuevo-usuario';
+import { userInfo } from 'os';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-}
+};
 
 @Injectable({
   providedIn: 'root'

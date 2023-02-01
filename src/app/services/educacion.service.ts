@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient, HttpContext } from '@angular/common/http';
+import { HttpClient, HttpContext, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Educacion } from 'src/app/interfaces/Educacion'
 import { environment } from 'src/environments/environment';
@@ -34,6 +34,8 @@ export class EducacionService{
   } 
   public borrarEducacion(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiHerokuUrl}educacion/${id}`);
+    
+    
   }
   public getEducacion(): Observable<Educacion[]> {
     return this.http.get<Educacion[]>(`${this.apiHerokuUrl}educacion/all`);

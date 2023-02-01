@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  firebase : {
+  /*firebase : {
 
     apiKey: "AIzaSyByIbkJT-aN81VRDsRjgOyvy17vZeALmbw",
 
@@ -16,6 +16,7 @@ export const environment = {
   
   
   },
+  */
   /*apiUrl: 'https://portfolio-perrottavicente.koyeb.app/'*/
   /*apiUrl: 'https://perrotta-vicente-portfolio.herokuapp.com/'*/
   
