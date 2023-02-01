@@ -20,12 +20,12 @@
             <div class="columnas" *ngFor="let exp of experienciaList">
               <div class="datosexperiencia">
   
-                <p><span class="titulo">{{exp.nombre_experiencia}}</span></p>
+                <p><span class="titulo">{{exp?.nombre_experiencia}}</span></p>
                   <br>
                   <br> 
-                  <p>{{exp.descripcion_experiencia}}</p>
+                  <p>{{exp?.descripcion_experiencia}}</p>
                   <br>
-                 <p> {{exp.duracion_experiencia}}
+                 <p> {{exp?.duracion_experiencia}}
   
                 </p>
                 <span id="eliminar-editar-experiencia" *ngIf="this.isAdmin">
@@ -108,22 +108,22 @@
           <div class="modal-body">
             <form #editForm="ngForm">
               <label type="hidden" for="id" class="pt-1">ID</label><br>
-              <input type="hidden" ngModel="{{editExperiencia.id}} " type="number" id="id" name="id" class="form-control">
+              <input type="hidden" ngModel="{{editExperiencia?.id}} " type="number" id="id" name="id" class="form-control">
              
               <label for="nombre_experiencia" class="pt-3">Nombre experiencia</label><br>
-              <input ngModel="{{editExperiencia.nombre_experiencia}} " type="text" id="nombre_experiencia" name="nombre_experiencia"
+              <input ngModel="{{editExperiencia?.nombre_experiencia}} " type="text" id="nombre_experiencia" name="nombre_experiencia"
                 class="form-control">
               
                 <label for="descripcion_experiencia" class="pt-3">Descripción experiencia</label><br>
-              <input ngModel="{{editExperiencia.descripcion_experiencia}}" type="text" id="descripcion_experiencia" name="descripcion_experiencia"
+              <input ngModel="{{editExperiencia?.descripcion_experiencia}}" type="text" id="descripcion_experiencia" name="descripcion_experiencia"
                 class="form-control"  >
 
                 <label for="duracion_experiencia" class="pt-3">Duración experiencia</label><br>
-                <input ngModel="{{editExperiencia.duracion_experiencia}}" type="text" id="duracion_experiencia" name="duracion_experiencia"
+                <input ngModel="{{editExperiencia?.duracion_experiencia}}" type="text" id="duracion_experiencia" name="duracion_experiencia"
                   class="form-control" >
               
                 <label for="persona_id" class="pt-3">Persona ID</label><br>
-              <input ngModel="{{editExperiencia.persona_id}}" type="number" id="persona_id" name="persona_id" class="form-control">
+              <input ngModel="{{editExperiencia?.persona_id}}" type="number" id="persona_id" name="persona_id" class="form-control">
           
               <div class="modal-footer">
                 <button id="update-experiencia-modal" type="button" class="btn btn-light"

@@ -10,41 +10,40 @@ import { TokenService } from './token.service';
 @Injectable({
   providedIn: 'root'
 })
-export class EducacionService{
+export class EducacionService {
 
   educacion: any;
   private apiHerokuUrl = environment.apiUrl;
-  url:string="https://portfolio-perrottavicente.koyeb.app/";
+  url: string = "https://portfolio-perrottavicente.koyeb.app/";
 
   constructor(private http: HttpClient) { }
 
-  
+
 
   public obtenerDatosEducacion(): Observable<Educacion[]> {
     return this.http.get<Educacion[]>(`${this.apiHerokuUrl}educacion/all`);
   }
 
-  public addEducacion(educacion:Educacion): Observable<Educacion> {
+  public addEducacion(educacion: Educacion): Observable<Educacion> {
     return this.http.post<Educacion>(`${this.apiHerokuUrl}educacion`, educacion);
   }
-  
+
   public updateEducacion(educacion: Educacion): Observable<Educacion> {
-    //return this.http.put<Educacion>(`${this.apiHerokuUrl}educacion/update`, educacion);
     return this.http.put<Educacion>(`${this.apiHerokuUrl}modifica/educacion`, educacion);
-  } 
+  }
   public borrarEducacion(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiHerokuUrl}educacion/${id}`);
-    
-    
+
+
   }
   public getEducacion(): Observable<Educacion[]> {
     return this.http.get<Educacion[]>(`${this.apiHerokuUrl}educacion/all`);
   }
- 
-  public editarDatosEducacion(educacion:Educacion):Observable<Educacion>{
-    return  this.http.put<Educacion>(this.url,educacion);
+
+  public editarDatosEducacion(educacion: Educacion): Observable<Educacion> {
+    return this.http.put<Educacion>(this.url, educacion);
   }
-  public obtenerUnaEducacion(){
+  public obtenerUnaEducacion() {
     return this.http.get<any>(this.apiHerokuUrl + "educacion/1")
-}
+  }
 }
