@@ -9,7 +9,7 @@
             {{exp}}
 
           </h1>
-          <app-edit-experiencia-button></app-edit-experiencia-button>
+          <app-edit-experiencia-button  *ngIf="this.isAdmin"></app-edit-experiencia-button>
           <div class="line-mf"></div>
         </div>
       </div>

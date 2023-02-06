@@ -20,7 +20,7 @@ email="perrottavicente@gmail.com"
   ngOnInit(): void {
     this.service.obtenerUnaPersona().subscribe(data => {
       this.persona=data;
-      console.log('Data ', data);
+     // console.log('Data ', data);
     })
   }
   }

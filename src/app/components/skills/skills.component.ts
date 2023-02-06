@@ -17,7 +17,7 @@ export class SkillsComponent implements OnInit {
   ngOnInit(): void {
     this.skService.obtenerDatosSkill().subscribe(datask => {
       this.skill=datask;
-      console.log('DataSkill ', datask);
+      //console.log('DataSkill ', datask);
     })
   }
   
