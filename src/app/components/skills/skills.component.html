@@ -10,7 +10,7 @@
        Skills
       
       </h1>
-     <app-edit-skill-button></app-edit-skill-button>
+     <app-edit-skill-button *ngIf="this.isAdmin"></app-edit-skill-button>
       <div class="line-mf"></div>
     </div>
   </div>
