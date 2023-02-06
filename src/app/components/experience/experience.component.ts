@@ -17,16 +17,16 @@ export class ExperienceComponent implements OnInit {
   isAdmin:boolean = false;
   
 
-  constructor(private expService:ExperienciaService, private getRoles : RolService) { }
+  constructor(private expService:ExperienciaService, private tokenService : TokenService) { }
 
   ngOnInit(): void {
     this.expService.obtenerDatosExperiencia().subscribe(dataexp => {
       this.experiencia=dataexp;
       //console.log('Data2 ', dataexp);
     })
-    this.getRole();
-    console.log("is admin en experiencia?: " + this.isAdmin)
-   this.cargarExperiencia();
+    this.getRol();
+    //console.log("is admin en experiencia?: " + this.isAdmin)
+   //this.cargarExperiencia();
    }
 
   
@@ -37,7 +37,7 @@ export class ExperienceComponent implements OnInit {
      }
     )
 }
-/*
+
 getRol(){
   const roles = this.tokenService.getAuthorities();
     this.realRole = 'user';
@@ -49,8 +49,9 @@ getRol(){
     });
 
   }
-  */
-  getRol(){
+  
+  /*getRol(){
     //pobner akgi
   }
+  */
 }
