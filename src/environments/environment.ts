@@ -20,10 +20,10 @@ export const environment = {
     appId: "1:695663752848:web:af7e9611e6ad9deb95ca15"
   
   },*/
-  apiUrl: 'https://portfolio-perrottavicente.koyeb.app/'
+  /*apiUrl: 'https://portfolio-perrottavicente.koyeb.app/'*/
   /*apiUrl: 'https://perrotta-vicente-portfolio.herokuapp.com/'*/
   
-  /*apiUrl: 'http://localhost:8080/'*/
+  apiUrl: 'http://localhost:8080/'
 };
 
 /*
