@@ -6,7 +6,7 @@
   <div>
     <div class="contenido" id="main-container">
       <div id="educacion">
-        <h4 class="educacion"> Educacion estás logeado como: {{roles}} {{userName}}
+        <h4 class="educacion"> Educacion estás logeado como: {{roles}} {{userName}} {{authorities}}
 
           <button ngbTooltip="Agregar educación" class="btn btn-success" (click)="onOpenModal(null!,'add')"
             *ngIf="isAdmin"><span class="btn-primary"></span> Agregar educacion</button>
