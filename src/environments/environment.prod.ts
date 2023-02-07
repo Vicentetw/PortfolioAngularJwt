@@ -17,7 +17,7 @@ export const environment = {
   
   },
   */
-  apiUrl: 'https://portfolio-perrottavicente.koyeb.app:8000/'
+  apiUrl: 'https://portfolio-perrottavicente.koyeb.app/'
   /*apiUrl: 'https://perrotta-vicente-portfolio.herokuapp.com/'*/
   
  /* apiUrl: 'http://localhost:8080/'*/
