@@ -7,7 +7,7 @@ export const environment = {
 
   /*firebase : {
 
-    apiKey: "AIzaSyByIbkJT-aN81VRDsRjgOyvy17vZeALmbw",
+    apiKey: "AIzaSnoMiresAquiJT-aN8esPrivadoLmbw",
 
     authDomain: "perrotta-vicente.firebaseapp.com",
   
@@ -17,7 +17,7 @@ export const environment = {
   
     messagingSenderId: "695663752848",
   
-    appId: "1:695663752848:web:af7e9611e6ad9deb95ca15"
+    appId: "1:695deeeee663752848:web:af7noTeLoMuestro5ca15"
   
   },*/
   apiUrl: 'https://portfolio-perrottavicente.koyeb.app/'
