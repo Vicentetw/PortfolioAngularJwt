@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   /*firebase : {
 
-    apiKey: "AIzaSyByIbkJT-aN81VRDsRjgOyvy17vZeALmbw",
+    apiKey: "AIzaSyByJT-",
 
     authDomain: "perrotta-vicente.firebaseapp.com",
   
@@ -12,7 +12,7 @@ export const environment = {
   
     messagingSenderId: "695663752848",
   
-    appId: "1:695663752848:web:af7e9611e6ad9deb95ca15"
+    appId: "1:695663752848:web:af7e9611e"
   
   
   },
